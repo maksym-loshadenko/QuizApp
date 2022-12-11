@@ -7,11 +7,9 @@ using System.Net;
 using System.Security.Claims;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
-using quiz_app.Models.Web;
 using quiz_app.Models.Web.Responses;
 using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using Microsoft.AspNetCore.Authorization;
 
 namespace quiz_app.Controllers
 {
@@ -20,13 +18,16 @@ namespace quiz_app.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IConfiguration _config;
+        private readonly ILogger<AuthController> _logger;
 
-        public AuthController(IConfiguration config)
+        public AuthController(IConfiguration config, ILogger<AuthController> logger)
         {
             _config = config;
+            _logger = logger;
         }
 
-        [HttpPost("/sign-in")]
+        [HttpPost("/auth/sign-in")]
+        [AllowAnonymous]
         public TokenRequestResult SignIn(User user)
         {
             var result = new TokenRequestResult();
