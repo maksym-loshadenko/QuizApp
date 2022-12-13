@@ -5,7 +5,7 @@ import {TokenStorageService} from "./token-storage.service";
 import {JwtHelperService} from "@auth0/angular-jwt";
 import {Router} from "@angular/router";
 
-let AUTH_API = "https://localhost:44433/auth/";
+let BASE_URL = "https://localhost:44433/auth/";
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': "application/json"})
@@ -23,7 +23,7 @@ export class AuthService {
     @Inject('BASE_URL') baseUrl: string
   )
   {
-    AUTH_API = baseUrl;
+    BASE_URL = baseUrl;
   }
 
   isAuthenticated(): boolean {
@@ -36,7 +36,7 @@ export class AuthService {
   }
 
   login(username: string, password: string): Observable<any> {
-    return this.http.post(AUTH_API + "auth/sign-in", {
+    return this.http.post(BASE_URL + "auth/sign-in", {
       username,
       password
     }, httpOptions);

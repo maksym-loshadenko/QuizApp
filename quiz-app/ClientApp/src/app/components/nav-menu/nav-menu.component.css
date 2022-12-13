@@ -1,0 +1,10 @@
+.link {
+  text-decoration: none;
+  cursor: pointer;
+  color: #ffffff;
+  margin: 0 10px;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

@@ -1,0 +1,51 @@
+<mat-card class="page-back">
+  <div class="testInfo">
+    <div class="testNameContainer">
+      <h1 class="testName">{{testName}}</h1>
+    </div>
+
+    <mat-divider class="small-divider"></mat-divider>
+
+    <p class="testDescription">{{testDescription}}</p>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <p class="currentQuestion">Question {{currentQuestion}} of {{questions.length}}</p>
+
+  <mat-divider></mat-divider>
+
+  <div class="questionWithAnswers">
+    <h1 class="question">{{ getCurrentQuestionText() }}</h1>
+    <mat-selection-list #answersList [multiple]="false">
+      <mat-list-option [value]="getFirstAnswer()">
+        {{ getFirstAnswer() }}
+      </mat-list-option>
+
+      <mat-list-option [value]="getSecondAnswer()">
+        {{ getSecondAnswer() }}
+      </mat-list-option>
+
+      <mat-list-option [value]="getThirdAnswer()">
+        {{ getThirdAnswer() }}
+      </mat-list-option>
+
+      <mat-list-option [value]="getFourthAnswer()">
+        {{ getFourthAnswer() }}
+      </mat-list-option>
+
+    </mat-selection-list>
+  </div>
+
+  <div class="actionButtons">
+    <button
+      (click)="moveToNextQuestion()"
+      class="nextQuestionButton"
+      mat-fab
+      color="primary"
+    >
+      <mat-icon>arrow_forward</mat-icon>
+    </button>
+  </div>
+
+</mat-card>

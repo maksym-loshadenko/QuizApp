@@ -1,0 +1,18 @@
+.page-back {
+  min-height: calc(100vh - 65px);
+}
+.page-back .page-title {
+  font-size: 28px;
+  margin: 20px;
+}
+.page-back .btn {
+  float: right;
+}
+.page-back .w-75 {
+  width: 75px;
+}
+.page-back .th-center {
+  text-align: center;
+}
+
+/*# sourceMappingURL=tests-list.component.css.map */
