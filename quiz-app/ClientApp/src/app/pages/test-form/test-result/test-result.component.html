@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>{{data.name}}</h1>
+
+<mat-dialog-content class="mat-typography">
+  <p>Score: {{data.score}}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+  <button
+    (click)="onBackClick()"
+    color="warn"
+    mat-dialog-close
+    mat-flat-button
+  >
+    Back
+  </button>
+</mat-dialog-actions>

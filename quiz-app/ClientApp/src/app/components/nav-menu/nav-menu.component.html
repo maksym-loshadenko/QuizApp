@@ -1,0 +1,14 @@
+<header>
+  <mat-toolbar color="primary">
+    <a class="link" href="https://localhost:44433/">Quiz App</a>
+    <span class="spacer"></span>
+    <a class="link" href="https://localhost:44433/swagger/index.html">Swagger</a>
+    <button
+      mat-icon-button
+      aria-label="login/logout button"
+      (click)="auth.signOut()"
+    >
+      <mat-icon>{{ auth.isAuthenticated() ? "logout" : "login" }}</mat-icon>
+    </button>
+  </mat-toolbar>
+</header>

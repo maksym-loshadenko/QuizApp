@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>{{data.name}}</h1>
+
+<mat-dialog-content class="mat-typography">
+  <p>{{data.description}}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="center">
+  <mat-checkbox class="checkbox" [(ngModel)]="agreedToStart">I agree to start</mat-checkbox>
+
+  <button
+    (click)="onProceedClick()"
+    [disabled]="!agreedToStart"
+    [mat-dialog-close]="true"
+    cdkFocusInitial
+    color="primary"
+    mat-flat-button
+  >
+    Proceed
+  </button>
+
+  <button
+    color="warn"
+    mat-dialog-close
+    mat-flat-button
+  >
+    Cancel
+  </button>
+</mat-dialog-actions>

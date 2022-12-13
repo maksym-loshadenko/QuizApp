@@ -1,0 +1,28 @@
+.container {
+  height: 600px;
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.container .login-panel {
+  width: 400px;
+  height: 350px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.container .login-panel .full-width {
+  width: 350px;
+}
+.container .login-panel .btn {
+  height: 50px;
+  text-transform: uppercase;
+}
+.container .login-panel .bold {
+  font-weight: 700;
+}
+
+/*# sourceMappingURL=login-form.component.css.map */
